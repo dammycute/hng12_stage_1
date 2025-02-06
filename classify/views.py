@@ -7,7 +7,7 @@ def is_armstrong(n: int) -> bool:
     if n < 0:
         return False
     digits = [int(d) for d in str(n)]
-    return sum(d**len(digits) for d in digits) == n
+    return sum(d**len(digits) for d in digits) == abs(n)
 
 def is_prime(n: int) -> bool:
     # Prime check for positive numbers only
@@ -22,7 +22,7 @@ def is_perfect(n: int) -> bool:
     # Perfect number check for positive numbers only
     if n < 1:
         return False
-    return sum(i for i in range(1, n) if n % i == 0) == n
+    return sum(i for i in range(1, n) if n % i == 0) == abs(n)
 
 def get_fun_fact(n: int) -> str:
     response = requests.get(f"http://numbersapi.com/{n}/math?json=true")
