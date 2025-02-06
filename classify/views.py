@@ -35,13 +35,13 @@ def classify_number(request):
     number = request.GET.get("number")
     
     if not number or not number.lstrip('-').isdigit():
-        return JsonResponse({"number": number, "error": True}, status=400)
+        return JsonResponse({"number": number if number else "null", "error": True}, status=400)
     
     number = int(number)
     
     # Handle negative numbers
-    if number < 0:
-        return JsonResponse({"number": number, "error": True}, status=400)
+    # if number < 0:
+    #     return JsonResponse({"number": number, "error": True}, status=400)
     
     properties = ["odd" if number % 2 else "even"]
     if is_armstrong(number):
@@ -52,7 +52,7 @@ def classify_number(request):
         "is_prime": is_prime(number),
         "is_perfect": is_perfect(number),
         "properties": properties,
-        "digit_sum": sum(map(int, str(number))),
+        "digit_sum": sum(int(digit) for digit in str(abs(number))),
         "fun_fact": get_fun_fact(number),
     }
     
