@@ -34,7 +34,7 @@ def get_fun_fact(n: int) -> str:
 def classify_number(request):
     number = request.GET.get("number")
     
-    if not number or not number.isdigit():
+    if not number or not number.lstrip('-').isdigit():
         return JsonResponse({"number": number, "error": True}, status=400)
     
     number = int(number)
