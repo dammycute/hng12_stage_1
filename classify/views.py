@@ -3,10 +3,14 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 
 def is_armstrong(n: int) -> bool:
+    # Armstrong check for positive numbers only
+    if n < 0:
+        return False
     digits = [int(d) for d in str(n)]
     return sum(d**len(digits) for d in digits) == n
 
 def is_prime(n: int) -> bool:
+    # Prime check for positive numbers only
     if n < 2:
         return False
     for i in range(2, int(n**0.5) + 1):
@@ -15,6 +19,9 @@ def is_prime(n: int) -> bool:
     return True
 
 def is_perfect(n: int) -> bool:
+    # Perfect number check for positive numbers only
+    if n < 1:
+        return False
     return sum(i for i in range(1, n) if n % i == 0) == n
 
 def get_fun_fact(n: int) -> str:
@@ -31,6 +38,11 @@ def classify_number(request):
         return JsonResponse({"number": number, "error": True}, status=400)
     
     number = int(number)
+    
+    # Handle negative numbers
+    if number < 0:
+        return JsonResponse({"number": number, "error": "Negative numbers are not allowed"}, status=400)
+    
     properties = ["odd" if number % 2 else "even"]
     if is_armstrong(number):
         properties.insert(0, "armstrong")
