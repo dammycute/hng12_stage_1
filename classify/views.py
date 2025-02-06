@@ -41,7 +41,7 @@ def classify_number(request):
     
     # Handle negative numbers
     if number < 0:
-        return JsonResponse({"number": number, "error": "Negative numbers are not allowed"}, status=400)
+        return JsonResponse({"number": number, "error": True}, status=400)
     
     properties = ["odd" if number % 2 else "even"]
     if is_armstrong(number):
