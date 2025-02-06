@@ -10,12 +10,12 @@ This is a public API developed for the HNG12 internship Stage 1 backend task. Th
 - **CORS Handling:** Enabled using `django-cors-headers`
 
 ## API Endpoint
-### **Base URL:** `https://your-deployment-url.com/`
+### **Base URL:** `https://critical-cicily-htcode-e4ca75fc.koyeb.app/`
 
 ### **GET /api/classify-number?number={number}`
 #### **Request Example:**
 ```
-GET https://your-deployment-url.com/api/classify-number?number=371
+GET https://critical-cicily-htcode-e4ca75fc.koyeb.app/api/classify-number/?number=371
 ```
 
 #### **Response Format (200 OK)**
@@ -69,13 +69,12 @@ python manage.py runserver
 The API will be available at `http://127.0.0.1:8000/`
 
 ## Deployment
-The API is deployed on **(Koyeb / Render / Railway)**. Ensure your deployment is accessible.
+The API is deployed on **(Koyeb )**.
 
 ## Useful Links
 - [Numbers API](http://numbersapi.com/)
 - [Django REST Framework](https://www.django-rest-framework.org/)
 - [Your GitHub Repository](https://github.com/dammycute/hng12_stage_1.git)
 
-## License
-This project is licensed under the MIT License.
+
 
