@@ -42,7 +42,7 @@ GET https://your-deployment-url.com/api/classify-number?number=371
 
 ### **1. Clone the Repository**
 ```sh
-git clone https://github.com/your-username/number-classification-api.git
+git clone https://github.com/dammycute/hng12_stage_1.git
 cd number-classification-api
 ```
 
@@ -74,7 +74,7 @@ The API is deployed on **(Koyeb / Render / Railway)**. Ensure your deployment is
 ## Useful Links
 - [Numbers API](http://numbersapi.com/)
 - [Django REST Framework](https://www.django-rest-framework.org/)
-- [Your GitHub Repository](https://github.com//number-classification-api)
+- [Your GitHub Repository](https://github.com/dammycute/hng12_stage_1.git)
 
 ## License
 This project is licensed under the MIT License.
