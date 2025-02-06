@@ -1,2 +1,2 @@
-web: gunicorn config.wsgi:application
+web: gunicorn number_classification.wsgi:application
 
